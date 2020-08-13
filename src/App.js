@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Axios from "axios"
 import CenterMenu from "./components/CenterMenu"
+import SideMenu from "./components/SideMenu"
+import PhotoOfDay from "./components/PhotoOfDay"
 
 const API_KEY = "DEMO_KEY"
 // const API_KEY = "MkDmR7vIsfFN3eSnARUsKJH4C0tPaXa8TcemitmE"
@@ -9,9 +11,7 @@ const API_KEY = "DEMO_KEY"
 function App() {
   const [imgObj, setImgObj] = useState({})
   const [specificDate, setSpecificDate] = useState("&date=2012-03-14") //sample: &date=2012-03-14
-
-  // const imgs = //all the imgs???
-  //state for whether the 1st & 2nd menu are visible??
+  //state for whether the 1st & 2nd menu are visible?? Dunno, the first CenterMenu will popup when the img is clicked on (containing "Back", "SideMenu" & "shuffle" buttons, maybe an "exitMenu" button). The second SideMenu will popup when it's button is pushed, replacing the CenterMenu (it'll add a dateSelector, AboutMe, & MoreInfo options). Hmm, that actually sounds kinda rough. Maybe we'll make the MoreInfo a toggle switch for the info. TBD.
 
   useEffect(() => {
     Axios.get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}${specificDate}`)
@@ -33,7 +33,8 @@ function App() {
       Date: {Date}
     </p>
     <CenterMenu imgObj={imgObj} />
-    <img src={imgObj.url} id={imgObj.date} alt="something actually relevant_____"/>
+    <PhotoOfDay imgObj={imgObj} />
+    <SideMenu imgObj={imgObj} />
     </div>
   );
 }
