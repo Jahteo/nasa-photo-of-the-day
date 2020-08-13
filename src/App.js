@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Axios from "axios"
+import CenterMenu from "./components/CenterMenu"
 
 const API_KEY = "DEMO_KEY"
 // const API_KEY = "MkDmR7vIsfFN3eSnARUsKJH4C0tPaXa8TcemitmE"
@@ -29,8 +30,10 @@ function App() {
     <p>
       Read through the instructions in the README.md file to build your NASA
       app! Have fun <span role="img" aria-label='go!'>🚀</span>!
+      Date: {Date}
     </p>
-    <img src={imgObj.url} alt="something actually relevant_____"/>
+    <CenterMenu imgObj={imgObj} />
+    <img src={imgObj.url} id={imgObj.date} alt="something actually relevant_____"/>
     </div>
   );
 }
