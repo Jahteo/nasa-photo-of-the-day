@@ -21,8 +21,7 @@ function CenterModal ({buttonLabel, className, imgObj}) {
           <p> {imgObj.copyright} </p>
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>Do Something</Button>{' '}
-          <Button color="secondary" onClick={toggle}>Cancel</Button>
+          <Button color="secondary" onClick={toggle}>Close</Button>
         </ModalFooter>
       </Modal>
     </div>

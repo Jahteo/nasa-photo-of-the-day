@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Axios from "axios"
 // import styled from "styled-components"
-import CenterModal from "./components/CenterModal"
 import SideMenu from "./components/SideMenu"
-// import PhotoOfDay from "./components/PhotoOfDay"
+import SideBar from "./components/SideBar"
 
 // const API_KEY = "DEMO_KEY"
 const API_KEY = "MkDmR7vIsfFN3eSnARUsKJH4C0tPaXa8TcemitmE"
@@ -12,8 +11,7 @@ const API_KEY = "MkDmR7vIsfFN3eSnARUsKJH4C0tPaXa8TcemitmE"
 
 function App() {
   const [imgObj, setImgObj] = useState({})
-  const [specificDate, setSpecificDate] = useState("&date=2012-03-14") //sample: &date=2012-03-14, left as initial state for all the times the daily pic is down in the afternoon
-  //state for whether the 1st & 2nd menu are visible?? Dunnoyet, ...
+  const [specificDate, setSpecificDate] = useState("") //sample: &date=2012-03-14, left as initial state for all the times the daily pic is down in the afternoon
 
   useEffect(() => {
     Axios.get(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}${specificDate}`)
@@ -28,11 +26,11 @@ function App() {
 
   let root = document.querySelector("body")
   root.style.backgroundImage = `url(${imgObj.hdurl})`
-
   console.log("timing:", imgObj)
+
   return (
     <div className="App">
-    <SideMenu imgObj={imgObj} />
+      <SideBar imgObj={imgObj} />
     </div>
   );
 }

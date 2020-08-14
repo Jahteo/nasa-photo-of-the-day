@@ -12,7 +12,7 @@ function SideMenu ({buttonLabel, className, imgObj}){
 
     return (
         //text-align not coordinating, ugg. can't get bootstrap or inline styles to cooperate...
-        <div class="btn-group-vertical" style={{textAlign: 'right'}}>
+        <div className="btn-group-vertical" style={{textAlign: 'right'}}>
             {/* can't get bootstrap class variations to work... */}
             <br />
             <br />
