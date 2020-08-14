@@ -7,6 +7,7 @@ function PhotoOfDay ({imgObj}) {
         <img
             src={imgObj.url}
             id={imgObj.date}
+            class="img-fluid"
             alt={`Nasa's Photo Of The Day for ${imgObj.date}: ${imgObj.title}`}
         />
     )

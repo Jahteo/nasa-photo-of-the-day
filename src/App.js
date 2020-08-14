@@ -32,8 +32,6 @@ function App() {
   console.log("timing:", imgObj)
   return (
     <div className="App">
-    {/* <CenterModal imgObj={imgObj} /> */}
-    {/* <PhotoOfDay imgObj={imgObj} /> {/* toggle this for "Full Image" Card */}
     <SideMenu imgObj={imgObj} />
     </div>
   );
